@@ -1,0 +1,53 @@
+:root {
+    --nexo-primario: #1f4e79;
+    --nexo-acento: #2e86c1;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+.bg-nexo {
+    background: var(--nexo-primario);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--nexo-primario);
+    --bs-btn-border-color: var(--nexo-primario);
+    --bs-btn-hover-bg: #173b5c;
+    --bs-btn-hover-border-color: #173b5c;
+}
+
+.tarjeta-publicacion {
+    transition: box-shadow .15s;
+}
+
+.tarjeta-publicacion:hover {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .08);
+}
+
+.contenido-publicacion pre {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: .375rem;
+    padding: .75rem;
+}
+
+.contenido-publicacion pre code.hljs {
+    padding: 0;
+    background: transparent;
+}
+
+.adjunto-imagen {
+    max-height: 360px;
+    object-fit: contain;
+}
+
+.niveles-participacion .nivel {
+    border-left: 3px solid var(--nexo-acento);
+    padding-left: .5rem;
+}
+
+.caja-acceso {
+    max-width: 440px;
+}
