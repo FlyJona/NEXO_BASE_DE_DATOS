@@ -1,0 +1,33 @@
+06 - PENDIENTES
+===============
+
+Del equipo (no se pueden hacer con código)
+------------------------------------------
+[ ] Pedir por escrito a Sistemas / TI el dominio de correo institucional
+    real (hoy se usa tesh.edu.mx como prueba; se cambia en
+    nexo/config/config.php -> DOMINIO_CORREO). Vencía el 26/10/2026.
+[ ] Designar al patrocinador institucional y firmar el acta (Form 1).
+    Vencía el 26/10/2026.
+[ ] Cambiar las 38 materias de ejemplo por el plan de estudios real del
+    TESH (y agregar otras carreras).
+[ ] Prueba de uso con 3 a 5 estudiantes y anotar sus comentarios en el
+    Product Backlog.
+[ ] Sprint Review y Retrospectiva de los Sprints 1 y 2 con el asesor.
+[ ] Medir que registrarse y publicar la primera duda tome 3 minutos o menos.
+[ ] Agregar a Yahir y Alejandra como colaboradores en GitHub.
+[ ] Instalar en cada computadora: XAMPP, Docker Desktop, Git y VS Code,
+    y ejecutar scripts/new_env.ps1 (cada quien tendrá sus contraseñas).
+[ ] Crear la cuenta de InfinityFree para las demostraciones (con MySQL).
+
+Técnicos (siguientes sprints)
+-----------------------------
+[ ] Sprint 3 (al 04/11/2026): PBI-05 búsqueda y panel de guardados,
+    PBI-06 tablero de preguntas por materia.
+[ ] Sprint 4 (al 11/11/2026): PBI-07 dudas resueltas y avisos,
+    PBI-08 reportes y moderación (necesitará una migración V005).
+[ ] Que la app emita tokens JWT por usuario para la API (hoy se generan
+    a mano con scripts/new_jwt.ps1, solo para pruebas).
+[ ] Actualizar el diagrama relacional con los tipos de PostgreSQL
+    (hoy muestra los de MySQL; los de PostgreSQL están en la auditoría).
+[ ] Recuperación de contraseña por correo: XAMPP e InfinityFree no envían
+    correos; habría que configurar SMTP.

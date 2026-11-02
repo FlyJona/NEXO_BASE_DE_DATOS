@@ -1,0 +1,87 @@
+04 - MIGRACIÓN DE MYSQL A POSTGRESQL + POSTGREST (02/11/2026)
+==============================================================
+
+Qué se pidió
+------------
+Pasar la base de datos de MySQL (XAMPP) a PostgreSQL y prepararla para
+exponerse como API con PostgREST, con migraciones, Docker, scripts de
+PowerShell, pruebas y documentación.
+
+Herramientas nuevas en la computadora
+-------------------------------------
+- Docker Desktop 4.97 y WSL2 (hubo que reiniciar la PC).
+- En C:\xampp\php\php.ini se activó extension=pdo_pgsql para que PHP
+  hable con PostgreSQL. Copia del original: php.ini.antes_pgsql.
+
+Archivos nuevos
+---------------
+compose.yaml ............ Servicios "db" (PostgreSQL 16.4) y "api"
+                          (PostgREST v12.2.3). Volumen nexo_pgdata para no
+                          perder datos. Puertos solo en 127.0.0.1.
+.env.example ............ Plantilla de variables. El .env real NO se sube.
+docker/postgres/init/ ... Crea los roles la primera vez que arranca la base.
+migrations/ ............. V000 extensión y esquemas, V001 las 10 tablas,
+                          V002 trigger, V003 materias, V004 permisos y API.
+scripts/ ................ new_env, apply_migrations, check_connection,
+                          new_jwt (PowerShell 5.1 y 7).
+tests/ .................. Pruebas de la base, la API y la app.
+nexo/docs/auditoria_mysql_postgresql.md  Tabla de equivalencias.
+
+Cómo se tradujo el esquema
+--------------------------
+- AUTO_INCREMENT -> identidad BIGINT     - TINYINT(1) -> BOOLEAN
+- ENUM -> TEXT con CHECK                 - DATETIME -> TIMESTAMPTZ
+- FULLTEXT -> índice GIN (español)
+- ON UPDATE CURRENT_TIMESTAMP -> trigger actualizado_en (V002)
+- Se crearon índices en las 13 llaves foráneas (MySQL los hacía solo).
+- La búsqueda sigue sin distinguir mayúsculas ni acentos (unaccent).
+
+Historial de migraciones
+------------------------
+- Tabla nexo_meta.schema_migrations: versión, fecha, checksum y duración.
+- Cada migración se aplica en una sola transacción: si falla no queda nada
+  a medias ni marcado, y el error se anota en nexo_meta.migration_failures.
+- Una migración aplicada no se vuelve a ejecutar; si alguien la edita,
+  el script se detiene.
+
+Seguridad (mínimo privilegio)
+-----------------------------
+nexo_migrator  aplica migraciones (dueño de la base).
+nexo_app       la app PHP: solo lo que necesita; no crea ni borra tablas.
+authenticator  conexión de PostgREST; nunca el superusuario.
+web_anon       sin token: solo ve el catálogo de materias.
+nexo_lector    con token JWT: ve publicaciones y respuestas visibles.
+La API es de solo lectura, no muestra correos ni contraseñas y oculta al
+autor de lo resguardado.
+
+Cambios en la app PHP
+---------------------
+- Funciona con PostgreSQL (por defecto) o MySQL, según DB_MOTOR en
+  nexo/config/config.local.php. MySQL sigue sirviendo para InfinityFree,
+  que no tiene PostgreSQL.
+- Se ajustaron 6 consultas que solo funcionaban en MySQL (ON DUPLICATE KEY,
+  comparaciones = 1 / = 0 y LIKE).
+
+Resultados de las pruebas
+-------------------------
+- check_connection.ps1 ............ 24 de 24 comprobaciones.
+- tests/run_tests.ps1 ............. 19 de 19 (esquema, restricciones,
+                                    permisos, errores, API y persistencia
+                                    tras reiniciar los contenedores).
+- tests/app_e2e.ps1 con PostgreSQL  22 de 22.
+- tests/app_e2e.ps1 con MySQL ..... 22 de 22.
+- Una prueba falló la primera vez por la codificación de acentos en
+  PowerShell 5.1; se corrigió en scripts/_comun.ps1.
+
+Cómo arrancarlo (resumen; detalle en README.md de la raíz)
+----------------------------------------------------------
+1. powershell -ExecutionPolicy Bypass -File .\scripts\new_env.ps1   (solo la 1.a vez)
+2. docker compose up -d
+3. powershell -ExecutionPolicy Bypass -File .\scripts\apply_migrations.ps1
+4. powershell -ExecutionPolicy Bypass -File .\scripts\check_connection.ps1
+App: http://localhost/nexo        API: http://127.0.0.1:3000/materias
+
+Cuidado
+-------
+"docker compose down -v" BORRA el volumen y todos los datos. Para apagar
+sin perder nada: docker compose stop.

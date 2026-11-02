@@ -1,0 +1,60 @@
+01 - SPRINT 1 Y SPRINT 2: DISEÑO Y MVP
+======================================
+
+Situación inicial (27/10/2026)
+------------------------------
+- Solo existían los formularios 1 a 7 y el trabajo de septiembre (encuesta,
+  requisitos RC-01 a RC-14 y Product Backlog PBI-01 a PBI-09).
+- Según el calendario del Form 6, el Sprint 1 (al 19/10) y el Sprint 2
+  (al 26/10) ya debían estar terminados. Se hicieron para ponerse al corriente.
+- Los formularios .docx NO se modificaron.
+
+Diseño (paquete 1.3 de la EDT)
+------------------------------
+- Arquitectura de la plataforma ............ nexo/docs/arquitectura.md
+- Diagrama entidad-relación (Chen) ........ nexo/docs/diagrama_entidad_relacion.drawio
+- Modelo relacional (tablas, PK, FK, tipos)  nexo/docs/modelo_relacional.drawio
+- Base de datos MySQL (10 tablas) ......... nexo/database/nexo.sql
+- Catálogo de 38 materias de EJEMPLO (Ingeniería en Sistemas
+  Computacionales), pendiente de validar con el plan del TESH.
+- Las pantallas se hicieron directamente en HTML + Bootstrap 5 (no en Figma).
+- Los diagramas .drawio se abren en https://app.diagrams.net
+
+Tablas: usuarios, perfiles, materias, usuario_materias, recuperaciones,
+publicaciones, adjuntos, comentarios, votos, guardados.
+
+Sprint 1 - App PHP
+------------------
+PBI-01 (TR-01) Acceso:
+  - Registro solo con correo institucional (dominio de prueba tesh.edu.mx).
+  - Inicio y cierre de sesión, recuperación de contraseña con enlace
+    de un solo uso que vence en 1 hora.
+  - Roles: estudiante, docente y moderador. El moderador asigna roles
+    en usuarios.php.
+PBI-02 (RC-05) Perfiles:
+  - Carrera, semestre, materias cursadas, habilidades e intereses.
+  - Búsqueda de estudiantes por materia, habilidad o interés.
+
+Sprint 2 - App PHP
+------------------
+PBI-03 (RC-11) Publicaciones:
+  - Editor con título, imágenes, archivos (máx. 5 de 5 MB) y bloques de
+    código con resaltado de colores. Editar y eliminar.
+PBI-04 (RC-08) Participación escalonada:
+  - Leer -> votar o guardar -> responder -> preguntar.
+  - Publicar o responder "resguardado": los demás ven "Estudiante
+    resguardado"; el moderador sí ve el nombre real.
+  - El moderador puede ocultar publicaciones.
+
+Seguridad incluida
+------------------
+- Contraseñas cifradas (password_hash), token CSRF en los formularios,
+  consultas preparadas (sin inyección SQL), salida escapada (sin XSS).
+- Se valida el tipo real de cada archivo subido; la carpeta uploads/ y la
+  configuración no se pueden abrir desde el navegador.
+
+Datos de prueba
+---------------
+- nexo/instalar.php crea 4 cuentas ficticias (moderador, docente y dos
+  estudiantes), 2 publicaciones y 1 respuesta. Solo funciona en modo
+  desarrollo. Las cuentas y su contraseña están en nexo/README.md.

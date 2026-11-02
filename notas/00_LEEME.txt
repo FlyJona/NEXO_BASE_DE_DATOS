@@ -1,0 +1,25 @@
+NOTAS DE TRABAJO - PROYECTO NEXO
+================================
+
+Proyecto: NEXO - Comunidad estudiantil digital (TESH)
+Equipo:   Serrano Juárez Jonatan Alejandro (Product Owner)
+          Pérez Medina Yahir (Scrum Master)
+          Martínez Nava Alejandra (Developer)
+Repositorio: https://github.com/FlyJona/NEXO_BASE_DE_DATOS
+
+Esta carpeta explica, en orden, qué se hizo en el repositorio y por qué.
+Son notas para el equipo y el asesor; la documentación técnica completa
+está en los README (raíz, nexo/, migrations/, scripts/ y tests/).
+
+Archivos:
+  01_sprint_1_y_2.txt          Diseño de la base de datos y la app PHP (MVP).
+  02_entorno_y_pruebas.txt     Instalación de herramientas y pruebas del MVP.
+  03_github.txt                Creación del repositorio y subida a GitHub.
+  04_migracion_postgresql.txt  Cambio de MySQL a PostgreSQL + PostgREST.
+  05_limpieza_y_demo.txt       Revisión del repositorio y demostración final.
+  06_pendientes.txt            Lo que falta y solo puede hacer el equipo.
+
+Historial de commits:
+  ea8fb3c  Sprints 1 y 2: formularios, diseño de la BD y MVP inicial de NEXO
+  2b3c45d  Migrar la base de datos a PostgreSQL + PostgREST
+  2b52010  Actualizar documentación de la app tras la migración a PostgreSQL

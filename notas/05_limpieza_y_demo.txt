@@ -1,0 +1,35 @@
+05 - REVISIÓN DEL REPOSITORIO Y DEMOSTRACIÓN
+============================================
+
+Revisión de archivos (02/11/2026)
+---------------------------------
+Se revisaron los 46 archivos que existían antes de la migración.
+No se borró ninguno porque todos siguen sirviendo:
+- Formularios .docx: información oficial del proyecto.
+- Páginas PHP, includes/ y assets/: forman la app.
+- nexo/database/nexo.sql: necesario para usar MySQL en InfinityFree.
+- nexo/instalar.php: crea los datos de prueba.
+- Diagramas .drawio: el modelo sigue siendo el mismo.
+- Archivos .htaccess: protegen las carpetas privadas.
+
+Se corrigió documentación desactualizada:
+- El ejemplo de InfinityFree no decía DB_MOTOR = 'mysql'; sin eso la app
+  habría fallado al publicarse (ahora el motor por defecto es PostgreSQL).
+- Se cambiaron las instrucciones viejas de "git init" por "git clone".
+- arquitectura.md ahora indica PostgreSQL o MySQL según DB_MOTOR.
+
+Demostración de funcionamiento
+------------------------------
+1. Servicios: PostgreSQL "healthy", PostgREST y Apache en marcha.
+2. Base de datos: 10 tablas, 5 migraciones registradas, 4 usuarios.
+3. API:
+   - Sin token, GET /materias ............ 200 (catálogo).
+   - Sin token, GET /publicaciones ....... 401 (pide token).
+   - Con token, GET /publicaciones ....... 200, autor "Estudiante resguardado".
+   - GET /usuarios ....................... 404 (no se expone).
+   - Con token, POST /materias ........... 403 (solo lectura).
+4. App: Ana inició sesión y publicó una pregunta resguardada
+   ("¿Qué diferencia hay entre PostgreSQL y MySQL?", id 4).
+   En PostgreSQL quedó con su autora real; en la API aparece como
+   "Estudiante resguardado" y sin id de autor.
+   Esa publicación de demostración sigue en la base local.

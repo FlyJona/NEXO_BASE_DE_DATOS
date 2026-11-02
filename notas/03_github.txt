@@ -1,0 +1,23 @@
+03 - REPOSITORIO DE GIT Y GITHUB
+================================
+
+- Se instaló Git 2.56 con winget.
+- El repositorio abarca toda la carpeta NEXO_Formularios (formularios .docx
+  y código), rama "main".
+- Autor de los commits: Serrano Juárez Jonatan Alejandro.
+- .gitignore de la raíz: excluye los temporales de Word (~$...) y, desde la
+  migración, los secretos (.env).
+- nexo/.gitignore: excluye nexo/uploads/ (archivos de los usuarios) y
+  nexo/config/config.local.php (contraseñas del entorno).
+
+GitHub
+------
+- Repositorio: https://github.com/FlyJona/NEXO_BASE_DE_DATOS (público).
+- Primer push el 02/11/2026; el inicio de sesión en GitHub se hizo con el
+  navegador (Git Credential Manager) y quedó guardado.
+
+Para que el equipo trabaje en él
+--------------------------------
+1. En GitHub: Settings -> Collaborators -> Add people (Yahir y Alejandra).
+2. Cada integrante: git clone https://github.com/FlyJona/NEXO_BASE_DE_DATOS.git
+3. Antes de trabajar: git pull. Al terminar: git add, git commit y git push.

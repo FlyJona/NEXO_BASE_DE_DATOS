@@ -1,0 +1,30 @@
+02 - ENTORNO Y PRUEBAS DEL MVP
+==============================
+
+Herramientas instaladas en la computadora de Jonatan
+----------------------------------------------------
+- XAMPP 8.2.12 (Apache, PHP 8.2, MySQL/MariaDB y phpMyAdmin), con winget.
+- La carpeta nexo/ se enlazó a C:\xampp\htdocs\nexo, así que la app se
+  abre en http://localhost/nexo y lo que se edita en el Escritorio se ve
+  directo en el navegador.
+
+Pruebas del MVP con MySQL (27/10/2026)
+--------------------------------------
+- Sintaxis: ningún archivo PHP con errores (php -l).
+- 32 pruebas automáticas: pasaron 30. Las 2 que fallaron eran un problema
+  del script de prueba (PowerShell 5.1 cortaba los textos de varias líneas),
+  no de NEXO; se comprobaron aparte y funcionaban.
+- Prueba manual en el navegador: registro, publicación con código y editor.
+
+Errores encontrados y corregidos
+--------------------------------
+1-3. Tres usos de isset() sobre constantes (error fatal de PHP) en
+     index.php, usuarios.php e includes/adjuntos.php.
+4.   Las etiquetas repetidas ("Java, java") guardaban la última versión;
+     ahora se queda la primera.
+5.   Sobraba espacio en blanco después de los bloques de código.
+
+Ver la base de datos
+--------------------
+- MySQL: http://localhost/phpmyadmin (base "nexo").
+- PostgreSQL: ver 04_migracion_postgresql.txt.
