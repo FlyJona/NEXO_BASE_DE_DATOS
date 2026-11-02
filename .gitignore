@@ -1,6 +1,14 @@
 # Archivos temporales de Word mientras un documento está abierto
 ~$*
 
+# Secretos locales (la plantilla .env.example sí se versiona)
+.env
+.env.*
+!.env.example
+
+# Archivos temporales de las pruebas
+tests/.tmp/
+
 # Sistema operativo
 Thumbs.db
 desktop.ini

@@ -53,18 +53,17 @@ if (es_post()) {
         $bd = db();
         $bd->beginTransaction();
         $bd->prepare('UPDATE usuarios SET nombre = ? WHERE id = ?')->execute([$datos['nombre'], $usuarioId]);
-        $bd->prepare(
-            'INSERT INTO perfiles (usuario_id, carrera, semestre, biografia, habilidades, intereses)
-             VALUES (?, ?, ?, ?, ?, ?)
-             ON DUPLICATE KEY UPDATE carrera = VALUES(carrera), semestre = VALUES(semestre),
-                 biografia = VALUES(biografia), habilidades = VALUES(habilidades), intereses = VALUES(intereses)'
-        )->execute([
-            $usuarioId,
+        // UPDATE o INSERT por separado (en lugar de un upsert) para funcionar igual en MySQL y PostgreSQL.
+        $sqlPerfil = $perfil
+            ? 'UPDATE perfiles SET carrera = ?, semestre = ?, biografia = ?, habilidades = ?, intereses = ? WHERE usuario_id = ?'
+            : 'INSERT INTO perfiles (carrera, semestre, biografia, habilidades, intereses, usuario_id) VALUES (?, ?, ?, ?, ?, ?)';
+        $bd->prepare($sqlPerfil)->execute([
             $datos['carrera'] ?: null,
             $datos['semestre'] !== '' ? (int) $datos['semestre'] : null,
             $datos['biografia'] ?: null,
             $datos['habilidades'] ?: null,
             $datos['intereses'] ?: null,
+            $usuarioId,
         ]);
         $bd->prepare('DELETE FROM usuario_materias WHERE usuario_id = ?')->execute([$usuarioId]);
         $insertar = $bd->prepare('INSERT INTO usuario_materias (usuario_id, materia_id) VALUES (?, ?)');

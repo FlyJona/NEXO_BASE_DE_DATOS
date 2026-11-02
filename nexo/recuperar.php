@@ -13,7 +13,7 @@ if (es_post()) {
     if (!correo_institucional($correo)) {
         $errores[] = 'Escribe tu correo institucional (@' . DOMINIO_CORREO . ').';
     } else {
-        $consulta = db()->prepare('SELECT id, nombre FROM usuarios WHERE correo = ? AND activo = 1');
+        $consulta = db()->prepare('SELECT id, nombre FROM usuarios WHERE correo = ? AND activo = TRUE');
         $consulta->execute([$correo]);
         $usuario = $consulta->fetch();
 

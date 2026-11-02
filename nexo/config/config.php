@@ -10,10 +10,13 @@ defined('APP_NOMBRE') || define('APP_NOMBRE', 'NEXO');
 defined('APP_ENTORNO') || define('APP_ENTORNO', 'desarrollo'); // 'desarrollo' o 'produccion'
 defined('APP_URL') || define('APP_URL', 'http://localhost/nexo'); // sin diagonal al final
 
-// Base de datos (valores por defecto de XAMPP).
-defined('DB_HOST') || define('DB_HOST', 'localhost');
+// Base de datos. Motor: 'pgsql' (PostgreSQL en Docker, ver README de la raíz) o 'mysql' (XAMPP / InfinityFree).
+// La contraseña de PostgreSQL va en config.local.php (rol nexo_app, valor NEXO_APP_PASSWORD de .env).
+defined('DB_MOTOR') || define('DB_MOTOR', 'pgsql');
+defined('DB_HOST') || define('DB_HOST', '127.0.0.1');
+defined('DB_PUERTO') || define('DB_PUERTO', DB_MOTOR === 'pgsql' ? 5432 : 3306);
 defined('DB_NOMBRE') || define('DB_NOMBRE', 'nexo');
-defined('DB_USUARIO') || define('DB_USUARIO', 'root');
+defined('DB_USUARIO') || define('DB_USUARIO', DB_MOTOR === 'pgsql' ? 'nexo_app' : 'root');
 defined('DB_CONTRASENA') || define('DB_CONTRASENA', '');
 
 // Dominio del correo institucional. PENDIENTE de confirmar con Sistemas / TI;

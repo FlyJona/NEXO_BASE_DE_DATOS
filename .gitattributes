@@ -1,0 +1,4 @@
+# El script de inicio corre en Linux dentro del contenedor: siempre con saltos de línea LF.
+*.sh text eol=lf
+# Migraciones con LF en todos los equipos (el checksum además normaliza los saltos de línea).
+*.sql text eol=lf

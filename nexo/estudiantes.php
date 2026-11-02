@@ -8,14 +8,14 @@ $texto = trim((string) ($_GET['q'] ?? ''));
 
 $sql = 'SELECT u.id, u.nombre, u.rol, p.carrera, p.semestre, p.habilidades, p.intereses
         FROM usuarios u LEFT JOIN perfiles p ON p.usuario_id = u.id
-        WHERE u.activo = 1';
+        WHERE u.activo = TRUE';
 $parametros = [];
 if ($materiaId) {
     $sql .= ' AND EXISTS (SELECT 1 FROM usuario_materias um WHERE um.usuario_id = u.id AND um.materia_id = ?)';
     $parametros[] = $materiaId;
 }
 if ($texto !== '') {
-    $sql .= ' AND (u.nombre LIKE ? OR p.habilidades LIKE ? OR p.intereses LIKE ?)';
+    $sql .= ' AND (' . sql_contiene('u.nombre') . ' OR ' . sql_contiene('p.habilidades') . ' OR ' . sql_contiene('p.intereses') . ')';
     array_push($parametros, patron_like($texto), patron_like($texto), patron_like($texto));
 }
 $consulta = db()->prepare($sql . ' ORDER BY u.nombre LIMIT 60');

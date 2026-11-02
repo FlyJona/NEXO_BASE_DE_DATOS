@@ -1,7 +1,7 @@
 # NEXO – Comunidad estudiantil digital (MVP)
 
 Código de los **Sprints 1 y 2** del proyecto NEXO (TESH).
-Tecnologías del Form 7: HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8, MySQL, XAMPP, Git/GitHub, InfinityFree.
+Tecnologías: HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8, PostgreSQL (Docker) o MySQL, XAMPP, Git/GitHub, InfinityFree.
 
 ## Qué incluye
 
@@ -15,14 +15,29 @@ Tecnologías del Form 7: HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8, MySQL, XAM
 | 2 | PBI-04 | RC-08 | Participación escalonada (leer → votar/guardar → responder → preguntar) y publicación/respuesta resguardada; cambiar visibilidad | `publicacion.php`, `acciones.php`, `index.php` |
 | 2 | — | 1.3.2 | Pantallas (implementadas directamente en HTML + Bootstrap) | todas las páginas |
 
-## Instalación en XAMPP (cada integrante)
+## Base de datos: PostgreSQL o MySQL
+
+La app funciona con los dos motores; se elige con `DB_MOTOR` en `config/config.local.php`.
+
+- **PostgreSQL (por defecto, en local):** corre en Docker. Sigue la [guía del README raíz](../README.md#puesta-en-marcha):
+  `scripts/new_env.ps1` crea `config.local.php` con `DB_MOTOR = 'pgsql'`. En `C:\xampp\php\php.ini` quita el `;` de
+  `;extension=pdo_pgsql` y reinicia Apache.
+- **MySQL (XAMPP o InfinityFree):** pon `define('DB_MOTOR', 'mysql');` y los datos de MySQL en `config.local.php` e importa
+  `database/nexo.sql`.
+
+Equivalencias entre ambos esquemas: [`docs/auditoria_mysql_postgresql.md`](docs/auditoria_mysql_postgresql.md).
+
+## Instalación en XAMPP con MySQL (cada integrante)
 
 1. Instala **XAMPP** (con PHP 8) y abre el *XAMPP Control Panel*. Inicia **Apache** y **MySQL**.
 2. Copia la carpeta `nexo` dentro de `C:\xampp\htdocs\` (queda `C:\xampp\htdocs\nexo`).
-3. Abre `http://localhost/phpmyadmin` → pestaña **Importar** → elige `nexo/database/nexo.sql` → **Continuar**.
+3. Crea `config/config.local.php` con `<?php define('DB_MOTOR', 'mysql');` (usuario `root` sin contraseña por defecto).
+4. Abre `http://localhost/phpmyadmin` → pestaña **Importar** → elige `nexo/database/nexo.sql` → **Continuar**.
    Se crea la base `nexo` con sus tablas y el catálogo de materias.
-4. Abre `http://localhost/nexo/instalar.php` y pulsa **Crear datos de prueba**.
-5. Entra a `http://localhost/nexo` con alguna de las cuentas de prueba.
+5. Abre `http://localhost/nexo/instalar.php` y pulsa **Crear datos de prueba**.
+6. Entra a `http://localhost/nexo` con alguna de las cuentas de prueba.
+
+Con PostgreSQL los pasos 1 a 4 se sustituyen por la puesta en marcha del README raíz; el paso 5 es igual.
 
 ### Cuentas de prueba (datos ficticios)
 

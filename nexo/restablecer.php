@@ -4,7 +4,7 @@ require __DIR__ . '/includes/inicio.php';
 
 $token = (string) ($_POST['token'] ?? $_GET['token'] ?? '');
 $consulta = db()->prepare(
-    'SELECT id, usuario_id FROM recuperaciones WHERE token_hash = ? AND usado = 0 AND expira_en > ?'
+    'SELECT id, usuario_id FROM recuperaciones WHERE token_hash = ? AND usado = FALSE AND expira_en > ?'
 );
 $consulta->execute([hash('sha256', $token), date('Y-m-d H:i:s')]);
 $recuperacion = $consulta->fetch();
@@ -21,7 +21,7 @@ if ($recuperacion && es_post()) {
         $bd->prepare('UPDATE usuarios SET contrasena_hash = ? WHERE id = ?')
             ->execute([password_hash($contrasena, PASSWORD_DEFAULT), $recuperacion['usuario_id']]);
         // Invalida este y cualquier otro enlace pendiente del usuario.
-        $bd->prepare('UPDATE recuperaciones SET usado = 1 WHERE usuario_id = ?')->execute([$recuperacion['usuario_id']]);
+        $bd->prepare('UPDATE recuperaciones SET usado = TRUE WHERE usuario_id = ?')->execute([$recuperacion['usuario_id']]);
         $bd->commit();
         flash('success', 'Tu contraseña se actualizó. Ya puedes iniciar sesión.');
         redirigir('login.php');

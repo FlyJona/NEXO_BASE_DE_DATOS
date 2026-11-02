@@ -10,7 +10,7 @@ NEXO es una aplicación web de tres capas, con las herramientas definidas en el 
 |---|---|---|
 | Presentación | HTML5, CSS3, JavaScript, Bootstrap 5 (CDN), highlight.js para los bloques de código | `*.php` de la raíz, `includes/encabezado.php`, `includes/pie.php`, `assets/` |
 | Lógica | PHP 8 (sin framework) | `includes/*.php` |
-| Datos | MySQL (phpMyAdmin) | `database/nexo.sql` |
+| Datos | PostgreSQL 16 en Docker (o MySQL en XAMPP / InfinityFree) | `../migrations/`, `database/nexo.sql` (MySQL) |
 
 Entornos: **XAMPP** en local y **InfinityFree** para las demostraciones. El código se guarda en **GitHub**.
 

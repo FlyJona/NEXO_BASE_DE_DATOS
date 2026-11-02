@@ -27,7 +27,7 @@ $materias = $consulta->fetchAll(PDO::FETCH_COLUMN);
 $sql = 'SELECT p.id, p.titulo, p.tipo, p.resguardada, p.estado, p.creado_en, m.nombre AS materia_nombre
         FROM publicaciones p LEFT JOIN materias m ON m.id = p.materia_id WHERE p.usuario_id = ?';
 if (!$esPropio) {
-    $sql .= " AND p.resguardada = 0 AND p.estado = 'visible'";
+    $sql .= " AND p.resguardada = FALSE AND p.estado = 'visible'";
 }
 $consulta = db()->prepare($sql . ' ORDER BY p.creado_en DESC LIMIT 20');
 $consulta->execute([$id]);
