@@ -1,0 +1,32 @@
+NOTAS - CARPETA docker/postgres/init/
+=====================================
+
+Qué hay aquí
+------------
+  01_roles.sh   Script que crea los ROLES (usuarios internos) de PostgreSQL.
+
+Qué se hizo (02/11/2026)
+------------------------
+Docker ejecuta este script UNA sola vez: la primera vez que arranca
+PostgreSQL con un volumen vacío. Crea:
+
+  nexo_migrator  Dueño de la base; aplica las migraciones (estructura).
+  nexo_app       Lo usa la app PHP. Solo puede leer y escribir lo que la
+                 app necesita; no crea ni borra tablas.
+  authenticator  Lo usa PostgREST para conectarse. No tiene permisos
+                 propios; solo cambia a web_anon o nexo_lector.
+  web_anon       Peticiones a la API sin token: solo ve las materias.
+  nexo_lector    Peticiones con token: ve publicaciones y respuestas
+                 visibles, sin correos ni autores resguardados.
+
+Las contraseñas NO están aquí: las toma del archivo .env, que no se sube
+a GitHub. Este script no crea tablas; las tablas las crean las
+migraciones de la carpeta migrations/ (V004 da los permisos a cada rol).
+
+Importante
+----------
+- Si se cambian las contraseñas en .env después de crear el volumen, NO
+  cambian en la base (el script ya no se vuelve a ejecutar). Hay que usar
+  ALTER ROLE ... PASSWORD como superusuario.
+- El archivo debe tener saltos de línea LF (Linux); .gitattributes lo
+  garantiza aunque se edite en Windows.

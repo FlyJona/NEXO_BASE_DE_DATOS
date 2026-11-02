@@ -1,0 +1,38 @@
+NOTAS - CARPETA nexo/database/
+==============================
+
+Qué hay aquí
+------------
+  nexo.sql    Estructura de la base de datos en MYSQL (la versión original).
+  .htaccess   Impide abrir esta carpeta desde el navegador.
+
+Qué se hizo
+-----------
+- Sprint 1 (27/10/2026): se diseñó la base de datos de NEXO en MySQL para
+  XAMPP. nexo.sql crea la base "nexo", las 10 tablas (usuarios, perfiles,
+  materias, usuario_materias, recuperaciones, publicaciones, adjuntos,
+  comentarios, votos y guardados) y carga 38 materias de ejemplo.
+- 02/11/2026: la base principal pasó a PostgreSQL (carpeta migrations/ en la
+  raíz del repositorio). Este archivo NO se borró porque sigue sirviendo:
+    * InfinityFree, el hosting del Form 7, no tiene PostgreSQL; ahí la app
+      usa MySQL con este archivo.
+    * La app funciona con los dos motores cambiando DB_MOTOR en
+      nexo/config/config.local.php ('pgsql' o 'mysql').
+
+Cómo se usa (solo para MySQL)
+-----------------------------
+- XAMPP: http://localhost/phpmyadmin -> Importar -> nexo.sql.
+- InfinityFree: borrar antes las dos primeras líneas (CREATE DATABASE y
+  USE nexo), porque allí la base ya existe con otro nombre.
+- Después: http://localhost/nexo/instalar.php para los datos de prueba.
+
+Equivalencia con PostgreSQL
+---------------------------
+Ambas estructuras tienen las mismas tablas, columnas y relaciones.
+La tabla de equivalencias de tipos está en
+nexo/docs/auditoria_mysql_postgresql.md.
+
+Si se cambia la estructura
+--------------------------
+Hacer el cambio en los DOS lugares: una migración nueva en migrations/
+(PostgreSQL) y en este nexo.sql (MySQL), mientras se use InfinityFree.

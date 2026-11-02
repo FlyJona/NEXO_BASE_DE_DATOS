@@ -1,0 +1,64 @@
+NOTAS - CARPETA migrations/
+===========================
+
+Qué hay aquí
+------------
+La ESTRUCTURA REAL de la base de datos en PostgreSQL. Son los archivos
+que se ejecutan para crear la base, en este orden:
+
+  V000__init_database.sql    Prepara la base: extensión "unaccent" (buscar
+                             sin acentos) y los esquemas "nexo" (tablas) y
+                             "api" (lo que publica PostgREST).
+  V001__baseline_schema.sql  LA ESTRUCTURA PRINCIPAL: las 10 tablas con sus
+                             columnas, tipos, llaves primarias y foráneas,
+                             restricciones e índices.
+  V002__triggers.sql         Trigger que actualiza la fecha "actualizado_en"
+                             cuando cambia un perfil o una publicación.
+  V003__seed_data.sql        Datos iniciales: las 38 materias de ejemplo.
+  V004__api_y_permisos.sql   Permisos de cada rol y vistas de la API.
+  README.md                  Reglas para crear nuevas migraciones.
+  archive/                   Lugar para esquemas viejos (hoy vacío).
+
+Las 10 tablas (V001)
+--------------------
+  usuarios          Cuentas: nombre, correo institucional, contraseña
+                    cifrada, rol (estudiante/docente/moderador), activo.
+  perfiles          Carrera, semestre, biografía, habilidades e intereses
+                    (uno por usuario).
+  materias          Catálogo de materias por carrera y semestre.
+  usuario_materias  Qué materias cursa cada usuario (muchos a muchos).
+  recuperaciones    Enlaces para restablecer la contraseña (vencen en 1 h).
+  publicaciones     Preguntas y contenidos; materia, si es resguardada y si
+                    está visible u oculta por moderación.
+  adjuntos          Datos de las imágenes y archivos de cada publicación.
+  comentarios       Respuestas a las publicaciones (pueden ser resguardadas).
+  votos             Quién marcó cada publicación como "útil".
+  guardados         Qué publicaciones guardó cada usuario.
+
+Qué se hizo
+-----------
+- Se tradujo la estructura MySQL original (nexo/database/nexo.sql) a
+  PostgreSQL sin perder reglas:
+    AUTO_INCREMENT -> identidad BIGINT    TINYINT(1) -> BOOLEAN
+    ENUM -> TEXT con CHECK                DATETIME   -> TIMESTAMPTZ
+    FULLTEXT -> índice GIN en español
+    ON UPDATE CURRENT_TIMESTAMP -> trigger (V002)
+- Se agregaron índices a las 13 llaves foráneas (MySQL los creaba solo).
+- Los correos se guardan siempre en minúsculas y no se pueden repetir.
+- Cada migración se aplica en una sola transacción y queda registrada en
+  la tabla nexo_meta.schema_migrations (versión, fecha, checksum, duración).
+  Si falla, no queda nada a medias.
+
+Cómo se usan
+------------
+  powershell -ExecutionPolicy Bypass -File .\scripts\apply_migrations.ps1
+
+Regla importante
+----------------
+NO editar una migración que ya se aplicó: el script lo detecta y se
+detiene. Para cambiar algo se crea una nueva (V005__..., V006__...).
+
+Pruebas
+-------
+tests/run_tests.ps1 crea una base vacía, aplica estas 5 migraciones y
+comprueba que la estructura sea correcta (19 de 19 pruebas pasaron).

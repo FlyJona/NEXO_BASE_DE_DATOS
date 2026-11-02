@@ -1,0 +1,49 @@
+NOTAS - CARPETA nexo/docs/
+==========================
+
+Qué hay aquí
+------------
+Documentación y diagramas de la base de datos y de la app.
+
+  diagrama_entidad_relacion.drawio   Diagrama ENTIDAD-RELACIÓN (Chen).
+  modelo_relacional.drawio           MODELO RELACIONAL.
+  arquitectura.md                    Arquitectura de la app y la base.
+  auditoria_mysql_postgresql.md      Comparación MySQL -> PostgreSQL.
+  .htaccess                          Impide abrir la carpeta en el navegador.
+
+Los .drawio se abren en https://app.diagrams.net
+(Abrir un diagrama existente). Desde ahí se exportan como imagen o PDF:
+Archivo -> Exportar como.
+
+Qué se hizo
+-----------
+diagrama_entidad_relacion.drawio (27/10/2026)
+  - Modelo conceptual en notación de Chen.
+  - 7 entidades (rectángulos): USUARIO, PERFIL, MATERIA, PUBLICACIÓN,
+    COMENTARIO, ADJUNTO y RECUPERACIÓN.
+  - 10 relaciones (rombos): tiene, cursa, publica, pertenece a, vota,
+    guarda, escribe, recibe, contiene y solicita.
+  - Atributos en óvalos, llave primaria subrayada.
+  - Cardinalidades 1:1, 1:N y N:M en cada línea.
+  - Sigue siendo válido después de pasar a PostgreSQL (el modelo no cambió).
+
+modelo_relacional.drawio (27/10/2026)
+  - Las 10 tablas con todas sus columnas, tipos de dato, PK, FK, UQ y AI.
+  - Relaciones en notación "pata de gallo".
+  - Muestra los tipos de MySQL; los equivalentes de PostgreSQL están en
+    auditoria_mysql_postgresql.md.
+
+arquitectura.md (27/10/2026, actualizado el 02/11/2026)
+  - Capas de la app, estructura de carpetas, roles y permisos, cómo
+    funciona la participación resguardada y para qué sirve cada tabla.
+  - Se actualizó para indicar que la base puede ser PostgreSQL o MySQL.
+
+auditoria_mysql_postgresql.md (02/11/2026)
+  - Inventario de la base MySQL original (tablas, llaves, índices).
+  - Tabla de equivalencias de cada tipo de dato y el motivo.
+  - Qué consultas de la app se cambiaron para funcionar en PostgreSQL.
+  - Qué no se migró y por qué.
+
+Pendiente
+---------
+Actualizar modelo_relacional.drawio con los tipos de PostgreSQL.

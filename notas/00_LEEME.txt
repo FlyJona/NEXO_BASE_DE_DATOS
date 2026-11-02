@@ -19,6 +19,12 @@ Archivos:
   05_limpieza_y_demo.txt       Revisión del repositorio y demostración final.
   06_pendientes.txt            Lo que falta y solo puede hacer el equipo.
 
+Notas dentro de cada carpeta de la base de datos (NOTAS.txt):
+  migrations/NOTAS.txt            Estructura en PostgreSQL (las 10 tablas).
+  nexo/database/NOTAS.txt         Estructura en MySQL (para InfinityFree).
+  nexo/docs/NOTAS.txt             Diagramas E-R y relacional, auditoría.
+  docker/postgres/init/NOTAS.txt  Roles y permisos de PostgreSQL.
+
 Historial de commits:
   ea8fb3c  Sprints 1 y 2: formularios, diseño de la BD y MVP inicial de NEXO
   2b3c45d  Migrar la base de datos a PostgreSQL + PostgREST
