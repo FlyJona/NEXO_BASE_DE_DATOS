@@ -1,0 +1,38 @@
+NOTAS - CARPETA formularios/
+============================
+
+Qué hay aquí
+------------
+Los 7 formularios de gestión del proyecto NEXO (Word), fechados el
+12/10/2026:
+
+  Form_1_Acta_de_Constitucion_NEXO.docx       Propósito, objetivos, criterios
+                                              de éxito, riesgos y presupuesto.
+  Form_2_Registro_de_Interesados_NEXO.docx    Interesados, su rol, influencia
+                                              y actitud.
+  Form_3_Matriz_de_Trazabilidad_NEXO.docx     Requisitos TR-01 y RC-01 a RC-14
+                                              con su objetivo y estado.
+  Form_4_Definicion_de_Alcance_NEXO.docx      Alcance del MVP, exclusiones,
+                                              restricciones y criterios de
+                                              aceptación.
+  Form_5_EDT_NEXO.docx                        Estructura de Desglose de Tareas.
+  Form_6_Diccionario_EDT_NEXO.docx            Detalle de cada paquete de
+                                              trabajo, hitos y responsables.
+  Form_7_Requisitos_de_Recursos_NEXO.docx     Herramientas, personas y equipo.
+
+Qué se hizo
+-----------
+- Los formularios NO se modificaron; su contenido es el original del equipo.
+- 02/11/2026: se movieron de la raíz del repositorio a esta carpeta para
+  separar la documentación de gestión de los archivos técnicos. Git
+  conserva su historial (se movieron con "git mv").
+
+Relación con lo construido
+--------------------------
+- El Form 6 fija las fechas de cada Sprint; con él se calculó que el
+  Sprint 1 y el Sprint 2 debían estar listos al 19/10 y al 26/10.
+- El Form 7 define las herramientas (PHP, MySQL, XAMPP, GitHub,
+  InfinityFree). Después se agregó PostgreSQL con Docker; MySQL se
+  conserva para InfinityFree.
+- Las fechas y estados de la matriz (Form 3) y de la EDT (Form 6) siguen
+  como se escribieron originalmente; el equipo decide cuándo actualizarlos.

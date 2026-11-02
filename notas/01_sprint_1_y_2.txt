@@ -14,6 +14,7 @@ Diseño (paquete 1.3 de la EDT)
 - Arquitectura de la plataforma ............ nexo/docs/arquitectura.md
 - Diagrama entidad-relación (Chen) ........ nexo/docs/diagrama_entidad_relacion.drawio
 - Modelo relacional (tablas, PK, FK, tipos)  nexo/docs/modelo_relacional.drawio
+  (Las dos imágenes .svg de los diagramas se agregaron el 02/11/2026.)
 - Base de datos MySQL (10 tablas) ......... nexo/database/nexo.sql
 - Catálogo de 38 materias de EJEMPLO (Ingeniería en Sistemas
   Computacionales), pendiente de validar con el plan del TESH.

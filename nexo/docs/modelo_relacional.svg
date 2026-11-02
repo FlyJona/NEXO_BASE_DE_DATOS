@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1780" height="777" viewBox="0 0 1780 777" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="ERmany" viewBox="0 0 14 14" refX="14" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+    <path d="M0,7 L14,0 M0,7 L14,7 M0,7 L14,14 M4,1 L4,13" fill="none" stroke="#6c8ebf" stroke-width="1.5"/>
+  </marker>
+  <marker id="ERmandOne" viewBox="0 0 14 14" refX="14" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+    <path d="M6,1 L6,13 M10,1 L10,13" fill="none" stroke="#6c8ebf" stroke-width="1.5"/>
+  </marker>
+  <marker id="ERzeroToOne" viewBox="0 0 18 14" refX="18" refY="7" markerWidth="18" markerHeight="14" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+    <circle cx="5" cy="7" r="4" fill="#ffffff" stroke="#6c8ebf" stroke-width="1.5"/>
+    <path d="M13,1 L13,13" fill="none" stroke="#6c8ebf" stroke-width="1.5"/>
+  </marker>
+</defs><rect width="100%" height="100%" fill="#ffffff"/>
+<path d="M420,148.5 H455 V148.5 H480" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmandOne)" marker-end="url(#ERmandOne)"/>
+<path d="M420,439 H455 V148.5 H480" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M860,401 H890 V148.5 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M860,401 H890 V580 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M920,177 H885 V148.5 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M920,177 H885 V580 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERzeroToOne)"/>
+<path d="M1300,499 H1330 V177 H1300" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M920,499 H885 V148.5 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M1360,110.5 H885 V148.5 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M1360,110.5 H1325 V177 H1300" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M1360,270.5 H885 V148.5 H860" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M1360,270.5 H1325 V177 H1300" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<path d="M1360,498 H1325 V177 H1300" fill="none" stroke="#6c8ebf" stroke-width="1.5" marker-start="url(#ERmany)" marker-end="url(#ERmandOne)"/>
+<rect x="40" y="60" width="380" height="177" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="230" y="80" text-anchor="middle" font-size="13" font-weight="bold">perfiles</text>
+<line x1="46" y1="90" x2="414" y2="90" stroke="#999999"/>
+<text x="50" y="110" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="102" y="110" font-size="11">usuario_id</text>
+<text x="212" y="110" font-size="11" fill="#555555">BIGINT</text>
+<text x="50" y="129" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="129" font-size="11">carrera</text>
+<text x="212" y="129" font-size="11" fill="#555555">VARCHAR(100) NULL</text>
+<text x="50" y="148" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="148" font-size="11">semestre</text>
+<text x="212" y="148" font-size="11" fill="#555555">SMALLINT NULL (1 a 12)</text>
+<text x="50" y="167" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="167" font-size="11">biografia</text>
+<text x="212" y="167" font-size="11" fill="#555555">VARCHAR(500) NULL</text>
+<text x="50" y="186" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="186" font-size="11">habilidades</text>
+<text x="212" y="186" font-size="11" fill="#555555">VARCHAR(500) NULL</text>
+<text x="50" y="205" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="205" font-size="11">intereses</text>
+<text x="212" y="205" font-size="11" fill="#555555">VARCHAR(500) NULL</text>
+<text x="50" y="224" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="224" font-size="11">actualizado_en</text>
+<text x="212" y="224" font-size="11" fill="#555555">TIMESTAMPTZ (trigger)</text>
+<rect x="40" y="360" width="380" height="158" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="230" y="380" text-anchor="middle" font-size="13" font-weight="bold">recuperaciones</text>
+<line x1="46" y1="390" x2="414" y2="390" stroke="#999999"/>
+<text x="50" y="410" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="102" y="410" font-size="11">id</text>
+<text x="212" y="410" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="50" y="429" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="102" y="429" font-size="11">usuario_id</text>
+<text x="212" y="429" font-size="11" fill="#555555">BIGINT</text>
+<text x="50" y="448" font-size="11" font-weight="bold" fill="#b85450">UQ</text>
+<text x="102" y="448" font-size="11">token_hash</text>
+<text x="212" y="448" font-size="11" fill="#555555">CHAR(64)</text>
+<text x="50" y="467" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="467" font-size="11">expira_en</text>
+<text x="212" y="467" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<text x="50" y="486" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="486" font-size="11">usado</text>
+<text x="212" y="486" font-size="11" fill="#555555">BOOLEAN</text>
+<text x="50" y="505" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="102" y="505" font-size="11">creado_en</text>
+<text x="212" y="505" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<rect x="480" y="60" width="380" height="177" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="670" y="80" text-anchor="middle" font-size="13" font-weight="bold">usuarios</text>
+<line x1="486" y1="90" x2="854" y2="90" stroke="#999999"/>
+<text x="490" y="110" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="542" y="110" font-size="11">id</text>
+<text x="652" y="110" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="490" y="129" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="129" font-size="11">nombre</text>
+<text x="652" y="129" font-size="11" fill="#555555">VARCHAR(100)</text>
+<text x="490" y="148" font-size="11" font-weight="bold" fill="#b85450">UQ</text>
+<text x="542" y="148" font-size="11">correo</text>
+<text x="652" y="148" font-size="11" fill="#555555">VARCHAR(150) en minúsculas</text>
+<text x="490" y="167" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="167" font-size="11">contrasena_hash</text>
+<text x="652" y="167" font-size="11" fill="#555555">VARCHAR(255)</text>
+<text x="490" y="186" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="186" font-size="11">rol</text>
+<text x="652" y="186" font-size="11" fill="#555555">TEXT CHECK (3 roles)</text>
+<text x="490" y="205" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="205" font-size="11">activo</text>
+<text x="652" y="205" font-size="11" fill="#555555">BOOLEAN</text>
+<text x="490" y="224" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="224" font-size="11">creado_en</text>
+<text x="652" y="224" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<rect x="480" y="360" width="380" height="82" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="670" y="380" text-anchor="middle" font-size="13" font-weight="bold">usuario_materias</text>
+<line x1="486" y1="390" x2="854" y2="390" stroke="#999999"/>
+<text x="490" y="410" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="542" y="410" font-size="11">usuario_id</text>
+<text x="652" y="410" font-size="11" fill="#555555">BIGINT</text>
+<text x="490" y="429" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="542" y="429" font-size="11">materia_id</text>
+<text x="652" y="429" font-size="11" fill="#555555">BIGINT</text>
+<rect x="480" y="520" width="380" height="120" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="670" y="540" text-anchor="middle" font-size="13" font-weight="bold">materias</text>
+<line x1="486" y1="550" x2="854" y2="550" stroke="#999999"/>
+<text x="490" y="570" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="542" y="570" font-size="11">id</text>
+<text x="652" y="570" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="490" y="589" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="589" font-size="11">nombre</text>
+<text x="652" y="589" font-size="11" fill="#555555">VARCHAR(120)</text>
+<text x="490" y="608" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="608" font-size="11">carrera</text>
+<text x="652" y="608" font-size="11" fill="#555555">VARCHAR(100)</text>
+<text x="490" y="627" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="542" y="627" font-size="11">semestre</text>
+<text x="652" y="627" font-size="11" fill="#555555">SMALLINT (1 a 12)</text>
+<rect x="920" y="60" width="380" height="234" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="1110" y="80" text-anchor="middle" font-size="13" font-weight="bold">publicaciones</text>
+<line x1="926" y1="90" x2="1294" y2="90" stroke="#999999"/>
+<text x="930" y="110" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="982" y="110" font-size="11">id</text>
+<text x="1092" y="110" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="930" y="129" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="982" y="129" font-size="11">usuario_id</text>
+<text x="1092" y="129" font-size="11" fill="#555555">BIGINT</text>
+<text x="930" y="148" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="982" y="148" font-size="11">materia_id</text>
+<text x="1092" y="148" font-size="11" fill="#555555">BIGINT NULL</text>
+<text x="930" y="167" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="167" font-size="11">tipo</text>
+<text x="1092" y="167" font-size="11" fill="#555555">TEXT CHECK (contenido, pregunta)</text>
+<text x="930" y="186" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="186" font-size="11">titulo</text>
+<text x="1092" y="186" font-size="11" fill="#555555">VARCHAR(150)</text>
+<text x="930" y="205" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="205" font-size="11">contenido</text>
+<text x="1092" y="205" font-size="11" fill="#555555">TEXT</text>
+<text x="930" y="224" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="224" font-size="11">resguardada</text>
+<text x="1092" y="224" font-size="11" fill="#555555">BOOLEAN</text>
+<text x="930" y="243" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="243" font-size="11">estado</text>
+<text x="1092" y="243" font-size="11" fill="#555555">TEXT CHECK (visible, oculta)</text>
+<text x="930" y="262" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="262" font-size="11">creado_en</text>
+<text x="1092" y="262" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<text x="930" y="281" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="281" font-size="11">actualizado_en</text>
+<text x="1092" y="281" font-size="11" fill="#555555">TIMESTAMPTZ (trigger)</text>
+<rect x="920" y="420" width="380" height="158" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="1110" y="440" text-anchor="middle" font-size="13" font-weight="bold">comentarios</text>
+<line x1="926" y1="450" x2="1294" y2="450" stroke="#999999"/>
+<text x="930" y="470" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="982" y="470" font-size="11">id</text>
+<text x="1092" y="470" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="930" y="489" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="982" y="489" font-size="11">publicacion_id</text>
+<text x="1092" y="489" font-size="11" fill="#555555">BIGINT</text>
+<text x="930" y="508" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="982" y="508" font-size="11">usuario_id</text>
+<text x="1092" y="508" font-size="11" fill="#555555">BIGINT</text>
+<text x="930" y="527" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="527" font-size="11">contenido</text>
+<text x="1092" y="527" font-size="11" fill="#555555">TEXT</text>
+<text x="930" y="546" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="546" font-size="11">resguardado</text>
+<text x="1092" y="546" font-size="11" fill="#555555">BOOLEAN</text>
+<text x="930" y="565" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="982" y="565" font-size="11">creado_en</text>
+<text x="1092" y="565" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<rect x="1360" y="60" width="380" height="101" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="1550" y="80" text-anchor="middle" font-size="13" font-weight="bold">votos</text>
+<line x1="1366" y1="90" x2="1734" y2="90" stroke="#999999"/>
+<text x="1370" y="110" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="1422" y="110" font-size="11">usuario_id</text>
+<text x="1532" y="110" font-size="11" fill="#555555">BIGINT</text>
+<text x="1370" y="129" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="1422" y="129" font-size="11">publicacion_id</text>
+<text x="1532" y="129" font-size="11" fill="#555555">BIGINT</text>
+<text x="1370" y="148" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="148" font-size="11">creado_en</text>
+<text x="1532" y="148" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<rect x="1360" y="220" width="380" height="101" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="1550" y="240" text-anchor="middle" font-size="13" font-weight="bold">guardados</text>
+<line x1="1366" y1="250" x2="1734" y2="250" stroke="#999999"/>
+<text x="1370" y="270" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="1422" y="270" font-size="11">usuario_id</text>
+<text x="1532" y="270" font-size="11" fill="#555555">BIGINT</text>
+<text x="1370" y="289" font-size="11" font-weight="bold" fill="#b85450">PK, FK</text>
+<text x="1422" y="289" font-size="11">publicacion_id</text>
+<text x="1532" y="289" font-size="11" fill="#555555">BIGINT</text>
+<text x="1370" y="308" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="308" font-size="11">creado_en</text>
+<text x="1532" y="308" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<rect x="1360" y="400" width="380" height="196" fill="#ffffff" stroke="#6c8ebf" stroke-width="2"/>
+<text x="1550" y="420" text-anchor="middle" font-size="13" font-weight="bold">adjuntos</text>
+<line x1="1366" y1="430" x2="1734" y2="430" stroke="#999999"/>
+<text x="1370" y="450" font-size="11" font-weight="bold" fill="#b85450">PK</text>
+<text x="1422" y="450" font-size="11">id</text>
+<text x="1532" y="450" font-size="11" fill="#555555">BIGINT IDENTITY</text>
+<text x="1370" y="469" font-size="11" font-weight="bold" fill="#b85450">FK</text>
+<text x="1422" y="469" font-size="11">publicacion_id</text>
+<text x="1532" y="469" font-size="11" fill="#555555">BIGINT</text>
+<text x="1370" y="488" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="488" font-size="11">nombre_original</text>
+<text x="1532" y="488" font-size="11" fill="#555555">VARCHAR(255)</text>
+<text x="1370" y="507" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="507" font-size="11">archivo</text>
+<text x="1532" y="507" font-size="11" fill="#555555">VARCHAR(60)</text>
+<text x="1370" y="526" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="526" font-size="11">tipo_mime</text>
+<text x="1532" y="526" font-size="11" fill="#555555">VARCHAR(120)</text>
+<text x="1370" y="545" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="545" font-size="11">tamano</text>
+<text x="1532" y="545" font-size="11" fill="#555555">BIGINT (&gt;= 0)</text>
+<text x="1370" y="564" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="564" font-size="11">es_imagen</text>
+<text x="1532" y="564" font-size="11" fill="#555555">BOOLEAN</text>
+<text x="1370" y="583" font-size="11" font-weight="bold" fill="#b85450"></text>
+<text x="1422" y="583" font-size="11">creado_en</text>
+<text x="1532" y="583" font-size="11" fill="#555555">TIMESTAMPTZ</text>
+<text x="40" y="735" font-size="12" font-style="italic">Modelo relacional — NEXO (PostgreSQL 16, esquema nexo). PK = llave primaria · FK = llave foránea · UQ = valor único · IDENTITY = autoincremental · NULL = opcional. Líneas: pata de gallo = muchos, barra doble = uno, círculo = cero o uno. Todas las FK son ON</text>
+<text x="40" y="751" font-size="12" font-style="italic">DELETE CASCADE salvo publicaciones.materia_id (SET NULL).</text>
+</svg>

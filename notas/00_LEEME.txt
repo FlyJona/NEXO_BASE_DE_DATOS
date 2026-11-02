@@ -19,7 +19,8 @@ Archivos:
   05_limpieza_y_demo.txt       Revisión del repositorio y demostración final.
   06_pendientes.txt            Lo que falta y solo puede hacer el equipo.
 
-Notas dentro de cada carpeta de la base de datos (NOTAS.txt):
+Notas dentro de cada carpeta (NOTAS.txt):
+  formularios/NOTAS.txt           Qué contiene cada formulario de gestión.
   migrations/NOTAS.txt            Estructura en PostgreSQL (las 10 tablas).
   nexo/database/NOTAS.txt         Estructura en MySQL (para InfinityFree).
   nexo/docs/NOTAS.txt             Diagramas E-R y relacional, auditoría.

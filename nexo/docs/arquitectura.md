@@ -75,10 +75,10 @@ y los moderadores siempre ven el nombre real para poder atender reportes.
 
 Diagramas editables (abrir en draw.io / diagrams.net):
 
-- [`diagrama_entidad_relacion.drawio`](diagrama_entidad_relacion.drawio): modelo conceptual en notación de Chen
+- [`diagrama_entidad_relacion.drawio`](diagrama_entidad_relacion.drawio) (imagen: [`diagrama_entidad_relacion.svg`](diagrama_entidad_relacion.svg)): modelo conceptual en notación de Chen
   (entidades, relaciones, atributos, llaves y cardinalidades 1:1, 1:N y N:M).
-- [`modelo_relacional.drawio`](modelo_relacional.drawio): tablas con columnas, tipos de dato MySQL (los de PostgreSQL están en
-  [`auditoria_mysql_postgresql.md`](auditoria_mysql_postgresql.md)), PK, FK y
+- [`modelo_relacional.drawio`](modelo_relacional.drawio) (imagen: [`modelo_relacional.svg`](modelo_relacional.svg)): tablas con columnas,
+  tipos de dato de PostgreSQL (los de MySQL están en [`auditoria_mysql_postgresql.md`](auditoria_mysql_postgresql.md)), PK, FK y
   relaciones en notación pata de gallo.
 
 | Tabla | Propósito | Relaciones |

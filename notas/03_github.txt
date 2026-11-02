@@ -2,8 +2,8 @@
 ================================
 
 - Se instaló Git 2.56 con winget.
-- El repositorio abarca toda la carpeta NEXO_Formularios (formularios .docx
-  y código), rama "main".
+- El repositorio abarca toda la carpeta NEXO_Formularios (los formularios
+  .docx en formularios/ y el código), rama "main".
 - Autor de los commits: Serrano Juárez Jonatan Alejandro.
 - .gitignore de la raíz: excluye los temporales de Word (~$...) y, desde la
   migración, los secretos (.env).

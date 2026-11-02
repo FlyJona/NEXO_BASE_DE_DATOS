@@ -57,5 +57,5 @@ El resto de las consultas ya era SQL estándar (`LIMIT ... OFFSET`, subconsultas
 
 - **Datos de demostración:** necesitan `password_hash()` de PHP; se siguen creando con `nexo/instalar.php`.
 - **Datos de la base MySQL local:** solo eran pruebas ficticias; no hay datos reales que trasladar.
-- **Diagramas** (`diagrama_entidad_relacion.drawio`, `modelo_relacional.drawio`): el modelo E-R no cambia. El modelo relacional muestra los
-  tipos de MySQL; los tipos de PostgreSQL están en la matriz de arriba y en `migrations/V001__baseline_schema.sql`.
+- **Diagramas** (`diagrama_entidad_relacion.drawio`, `modelo_relacional.drawio`): el modelo E-R no cambia. El modelo relacional se
+  actualizó el 02/11/2026 con los tipos de PostgreSQL; los de MySQL están en la matriz de arriba.

@@ -27,7 +27,6 @@ Técnicos (siguientes sprints)
     PBI-08 reportes y moderación (necesitará una migración V005).
 [ ] Que la app emita tokens JWT por usuario para la API (hoy se generan
     a mano con scripts/new_jwt.ps1, solo para pruebas).
-[ ] Actualizar el diagrama relacional con los tipos de PostgreSQL
-    (hoy muestra los de MySQL; los de PostgreSQL están en la auditoría).
+[x] Actualizar el diagrama relacional con los tipos de PostgreSQL (02/11/2026).
 [ ] Recuperación de contraseña por correo: XAMPP e InfinityFree no envían
     correos; habría que configurar SMTP.

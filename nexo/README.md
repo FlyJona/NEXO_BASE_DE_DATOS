@@ -7,7 +7,7 @@ Tecnologías: HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8, PostgreSQL (Docker) o
 
 | Sprint | PBI | Requisito | Funcionalidad | Archivos |
 |---|---|---|---|---|
-| 1 | — | 1.3.1 | Arquitectura, diagrama entidad-relación y modelo relacional | `docs/arquitectura.md`, `docs/diagrama_entidad_relacion.drawio`, `docs/modelo_relacional.drawio`, `database/nexo.sql` |
+| 1 | — | 1.3.1 | Arquitectura, diagrama entidad-relación y modelo relacional | `docs/arquitectura.md`, `docs/diagrama_entidad_relacion.drawio` y `.svg`, `docs/modelo_relacional.drawio` y `.svg`, `database/nexo.sql` |
 | 1 | — | 1.3.3 | Taxonomía de materias (ejemplo ISC, **validar con el plan del TESH**) | `database/nexo.sql` |
 | 1 | PBI-01 | TR-01 | Registro solo con correo institucional, inicio y cierre de sesión, recuperar contraseña, roles y permisos | `registro.php`, `login.php`, `logout.php`, `recuperar.php`, `restablecer.php`, `usuarios.php`, `includes/auth.php` |
 | 1 | PBI-02 | RC-05 | Perfil con materias, habilidades e intereses; búsqueda de estudiantes por materia o interés | `perfil.php`, `perfil_editar.php`, `estudiantes.php` |
@@ -103,7 +103,7 @@ git clone https://github.com/FlyJona/NEXO_BASE_DE_DATOS.git
 
 - [ ] Instalar XAMPP, Docker Desktop y VS Code en las 3 computadoras y probar el flujo completo.
 - [ ] Agregar a los integrantes como colaboradores en GitHub y crear la cuenta de InfinityFree.
-- [ ] Revisar en equipo el diagrama E-R y el modelo relacional (`docs/*.drawio`, se abren en draw.io).
+- [ ] Revisar en equipo el diagrama E-R y el modelo relacional (`docs/*.svg` se ven en GitHub; `docs/*.drawio` se editan en draw.io).
 - [ ] Sustituir el catálogo de materias de ejemplo por el plan de estudios real del TESH (y otras carreras).
 - [ ] Pedir a Sistemas / TI el dominio de correo institucional por escrito (vencía el 26/10).
 - [ ] Designar al patrocinador y firmar el acta de constitución (vencía el 26/10).
