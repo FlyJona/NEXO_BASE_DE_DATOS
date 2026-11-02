@@ -62,12 +62,15 @@ Todo está en `config/config.php`:
 
 - `DOMINIO_CORREO`: **pendiente de confirmar con Sistemas / TI**. Por ahora `tesh.edu.mx` como dominio de prueba (premisa del Form 4).
 - `APP_URL`: dirección donde corre NEXO (`http://localhost/nexo` en XAMPP).
-- `DB_*`: conexión a MySQL.
+- `DB_MOTOR`: `pgsql` (por defecto) o `mysql`.
+- `DB_*`: conexión a la base de datos.
 
 Para InfinityFree (u otro entorno) no edites `config.php`: crea `config/config.local.php` con tus valores; ese archivo no se sube a GitHub.
+InfinityFree no tiene PostgreSQL, así que ahí **debe** ir `DB_MOTOR` en `mysql`:
 
 ```php
 <?php
+define('DB_MOTOR', 'mysql');
 define('APP_ENTORNO', 'produccion');
 define('APP_URL', 'https://tu-sitio.infinityfreeapp.com');
 define('DB_HOST', 'sqlXXX.infinityfree.com');
@@ -90,18 +93,16 @@ define('DB_CONTRASENA', 'la-contraseña-de-tu-panel');
 
 ## GitHub
 
-```bash
-git init
-git add .
-git commit -m "Sprint 1 y 2: acceso, perfiles, publicaciones y participación resguardada"
-```
+El repositorio es https://github.com/FlyJona/NEXO_BASE_DE_DATOS (la raíz es la carpeta que contiene `nexo/`). Para descargarlo:
 
-Después crea el repositorio en GitHub, agrega a los tres integrantes y haz `git push`.
+```bash
+git clone https://github.com/FlyJona/NEXO_BASE_DE_DATOS.git
+```
 
 ## Lo que el equipo debe hacer (no se puede hacer con código)
 
-- [ ] Instalar XAMPP y VS Code en las 3 computadoras y probar el flujo completo.
-- [ ] Crear el repositorio en GitHub y la cuenta de InfinityFree.
+- [ ] Instalar XAMPP, Docker Desktop y VS Code en las 3 computadoras y probar el flujo completo.
+- [ ] Agregar a los integrantes como colaboradores en GitHub y crear la cuenta de InfinityFree.
 - [ ] Revisar en equipo el diagrama E-R y el modelo relacional (`docs/*.drawio`, se abren en draw.io).
 - [ ] Sustituir el catálogo de materias de ejemplo por el plan de estudios real del TESH (y otras carreras).
 - [ ] Pedir a Sistemas / TI el dominio de correo institucional por escrito (vencía el 26/10).
@@ -112,5 +113,5 @@ Después crea el repositorio en GitHub, agrega a los tres integrantes y haz `git
 
 ## Siguiente: Sprint 3 (al 04/11/2026)
 
-- PBI-05 Búsqueda interna (ya existe el índice `FULLTEXT` en `publicaciones`) y panel de guardados (ya existe la tabla `guardados`).
+- PBI-05 Búsqueda interna (ya existe el índice de texto completo en `publicaciones`: GIN en PostgreSQL, `FULLTEXT` en MySQL) y panel de guardados (ya existe la tabla `guardados`).
 - PBI-06 Tablero de preguntas por materia (ya existe el tipo `pregunta` y el filtro por materia en el inicio).

@@ -12,7 +12,8 @@ NEXO es una aplicación web de tres capas, con las herramientas definidas en el 
 | Lógica | PHP 8 (sin framework) | `includes/*.php` |
 | Datos | PostgreSQL 16 en Docker (o MySQL en XAMPP / InfinityFree) | `../migrations/`, `database/nexo.sql` (MySQL) |
 
-Entornos: **XAMPP** en local y **InfinityFree** para las demostraciones. El código se guarda en **GitHub**.
+Entornos: **XAMPP + PostgreSQL en Docker** en local y **InfinityFree con MySQL** para las demostraciones.
+El código se guarda en **GitHub**. La base de datos, PostgREST y sus roles se describen en el [README raíz](../../README.md).
 
 ```
 Navegador ──HTTP──> Apache (XAMPP / InfinityFree)
@@ -20,7 +21,7 @@ Navegador ──HTTP──> Apache (XAMPP / InfinityFree)
                       ├─ páginas PHP (index, registro, login, perfil, publicar, publicacion…)
                       │     └─ includes/ (sesión, permisos, validaciones, adjuntos)
                       │
-                      ├─ MySQL  (usuarios, perfiles, publicaciones, comentarios…)
+                      ├─ PostgreSQL (Docker) o MySQL, según DB_MOTOR (usuarios, perfiles, publicaciones…)
                       └─ uploads/ (imágenes y archivos; no se accede directo, solo por adjunto.php)
 ```
 
@@ -76,7 +77,8 @@ Diagramas editables (abrir en draw.io / diagrams.net):
 
 - [`diagrama_entidad_relacion.drawio`](diagrama_entidad_relacion.drawio): modelo conceptual en notación de Chen
   (entidades, relaciones, atributos, llaves y cardinalidades 1:1, 1:N y N:M).
-- [`modelo_relacional.drawio`](modelo_relacional.drawio): tablas con columnas, tipos de dato MySQL, PK, FK y
+- [`modelo_relacional.drawio`](modelo_relacional.drawio): tablas con columnas, tipos de dato MySQL (los de PostgreSQL están en
+  [`auditoria_mysql_postgresql.md`](auditoria_mysql_postgresql.md)), PK, FK y
   relaciones en notación pata de gallo.
 
 | Tabla | Propósito | Relaciones |
